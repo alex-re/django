@@ -21,3 +21,4 @@ urlpatterns = [
     path('', include('blog.urls')),  # blog/ | bloog_dev/ (I think its better no NOT leave it emty for privention of possible conflicts!)
     
 ]
+
