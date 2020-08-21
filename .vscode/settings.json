@@ -4,4 +4,7 @@
     "--disable=C0111", // missing docstring
     "--load-plugins=pylint_django,pylint_celery",
  ],
+ "editor.tokenColorCustomizations": {
+    //  "comments": "#d4922f"
+    },
 }
