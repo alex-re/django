@@ -7,4 +7,5 @@
  "editor.tokenColorCustomizations": {
     //  "comments": "#d4922f"
     },
+    "python.pythonPath": "venv/bin/python",
 }
