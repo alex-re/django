@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'  # default is bootstrap2 !
 
 LOGIN_REDIRECT_URL = 'blog-home'
+
+LOGIN_URL = 'login'
