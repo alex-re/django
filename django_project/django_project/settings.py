@@ -124,4 +124,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+# BY ME :)
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'  # default is bootstrap2 !
+
+LOGIN_REDIRECT_URL = 'blog-home'

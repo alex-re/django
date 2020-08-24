@@ -20,8 +20,10 @@ def register(request):
         if form.is_valid():
             form.save()  # it will automaticly hash passwords
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Accont created for {username}!')
-            return redirect('blog-home')
+            # messages.success(request, f'Accont created for {username}!')
+            # return redirect('blog-home')
+            messages.success(request, f'Hi {username}!  Your accont created and now you can login')
+            return redirect('login')
     else:
         # form = UserCreationForm()
         form = UserRegisterForm()
