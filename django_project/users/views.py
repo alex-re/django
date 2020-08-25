@@ -36,3 +36,12 @@ def profile(request):
     return render(request, 'users/profile.html')
 
 
+# def login(request):
+#     from django.contrib.auth.forms import AuthenticationForm
+#     form = AuthenticationForm(request.POST)
+#     try:
+#         if request.GET['next']:
+#             messages.warning(request, 'first login!')
+#     except Exception as e:
+#         pass
+#     return render(request, 'users/login2.html', {'form': form})
