@@ -123,8 +123,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 # BY ME :)
+
+import os
+
+MEADIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEADIA_URL = '/media/'
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'  # default is bootstrap2 !
 
