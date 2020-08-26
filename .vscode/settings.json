@@ -4,7 +4,7 @@
     // "--disable=C0111", // missing docstring
     "--load-plugins=pylint_django,pylint_celery",
  ],
- "editor.tokenColorCustomizations": {
+"editor.tokenColorCustomizations": {
     //  "comments": "#d4922f"
     },
     "python.pythonPath": "venv/bin/python",
