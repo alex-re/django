@@ -45,6 +45,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']  # "-" for reverse it (newer in top)
+    paginate_by = 2  # you can access them by:  localhost:8000/?page=2 (page=number of page) (page=[1,...])
 
 
 class PostDetailView(DetailView):
