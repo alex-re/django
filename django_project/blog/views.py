@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse  # if we have external html files we can comment this importing.
 
 from .models import Post  # "." means models in this directory.
@@ -10,6 +10,7 @@ from django.views.generic import (  # ListView is class based view.
     DeleteView
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -40,12 +41,17 @@ def home(request):
     return render(request, 'blog/home.html', context)  # ~/django/django_project/blog/templates/blog/home.html
 
 
+def about(request):
+    # return HttpResponse("<h1> Blog About </h1>")
+    return render(request, 'blog/about.html', {'title':'About'})
+
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']  # "-" for reverse it (newer in top)
-    paginate_by = 2  # you can access them by:  localhost:8000/?page=2 (page=number of page) (page=[1,...])
+    paginate_by = 5  # you can access them by:  localhost:8000/?page=2 (page=number of page) (page=[1,...])
 
 
 class PostDetailView(DetailView):
@@ -86,7 +92,13 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-def about(request):
-    # return HttpResponse("<h1> Blog About </h1>")
-    return render(request, 'blog/about.html', {'title':'About'})
 
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user_post.html'
+    context_object_name = 'posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))  # if user exist show it else return 404.
+        return Post.objects.filter(author=user).order_by('-date_posted')
