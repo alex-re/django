@@ -127,6 +127,8 @@ STATIC_URL = '/static/'
 
 import os
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 MEADIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEADIA_URL = '/media/'
 
