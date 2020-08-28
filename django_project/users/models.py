@@ -13,8 +13,8 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self):  # we are aboute creating our own save method and it has to get sth from its parrents.
-        super().save()  # this super hints to main save() method.
+    def save(self, *args, **kawrgs):  # we are aboute creating our own save method and it has to get sth from its parrents.
+        super().save(*args, **kawrgs)  # this super hints to main save() method.
 
         img = Image.open(self.image.path)
 
