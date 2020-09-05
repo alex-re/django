@@ -46,6 +46,10 @@ def about(request):
     return render(request, 'blog/about.html', {'title':'About'})
 
 
+def error_404(request, exception=None):
+    return render(request, 'blog/404.html')
+
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
