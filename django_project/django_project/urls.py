@@ -24,6 +24,7 @@ import blog
 
 
 handler404 = 'blog.views.error_404'
+handler403 = 'blog.views.error_403'
 
 
 urlpatterns = [

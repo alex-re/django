@@ -11,6 +11,8 @@ from django.views.generic import (  # ListView is class based view.
 )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.core.exceptions import PermissionDenied
+
 
 # Create your views here.
 
@@ -48,6 +50,10 @@ def about(request):
 
 def error_404(request, exception=None):
     return render(request, 'blog/404.html')
+
+
+def error_403(request, exception=None):
+    raise PermissionDenied
 
 
 class PostListView(ListView):
