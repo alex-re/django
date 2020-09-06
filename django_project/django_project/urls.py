@@ -20,7 +20,6 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-import blog  # test if this import is needed for handlers
 
 
 handler404 = 'blog.views.error_404'
