@@ -1,7 +1,5 @@
 # django
 
-===
-
 ## TODO
 - [x] default 404
 ~~max-height for post boxes and overflow hidden or fade~~ **not needed for this case**
