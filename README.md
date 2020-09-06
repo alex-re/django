@@ -2,8 +2,8 @@
 
 ## TODO
 - [x] default 404
-~~max-height for post boxes and overflow hidden or fade~~ **not needed for this case**
-- [ ] google reCAPCHA
+~~max-height for post boxes and overflow hidden or fade~~ **Not needed for this case its about front**
+- [x] google reCAPCHA
 - [x] costomize django auth system
 
 ---
